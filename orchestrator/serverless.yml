@@ -1,0 +1,42 @@
+service: OrquestradorLex
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+        - s3:HeadObject
+        - rekognition:DetectLabels
+        - rekognition:DetectFaces
+        - lex:RecognizeText
+        - lex:GetSession  
+        - lex:PutSession   
+        - transcribe:StartTranscriptionJob
+        - transcribe:GetTranscriptionJob
+
+      Resource: "*"
+
+functions:
+  health:
+    handler: src.handler.orchestrator
+    events:
+      - httpApi:
+          path: /
+          method: post
+
+plugins:
+   - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+     dockerizePip: true
+
+package:
+  exclude:
+    - ./**
+  include:
+    - src/**
