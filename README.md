@@ -41,7 +41,7 @@ O ChatBot AlôPolícia é um recurso para auxiliar as autoridades a colher infor
 **3.2 Estrutura de pastas do projeto**
 
 ```
-sprint-9-10-pb-aws-fatec
+
 │ 
 │   .gitignore
 │   README.md
