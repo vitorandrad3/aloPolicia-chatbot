@@ -198,3 +198,6 @@ O ChatBot AlôPolícia é um recurso para auxiliar as autoridades a colher infor
 
 - Testes no WhatsApp e correções.
 
+# Video Demonstrativo
+
+Clique [aqui](https://www.youtube.com/watch?v=MHnWwhJwaDo) para ver um pequeno vídeo demonstrativo do chatbot.
